@@ -1,7 +1,7 @@
-Configuration:
+**Configuration**:
 git config --global user.name [name] – Set author name
 git config --global user.email [email] – Set author e-mail address used for GitHub.
- 
+ **Most used basic commands:**
 git init : This command turns a directory into an empty Git repository. This is the first step in creating a repository. After running git init, adding and committing files/directories is possible.
 git clone <remote URL> : Creates local copy of remote repository.
 git add <file or directory name> :  Adds files in the to the staging area for Git. 
@@ -11,24 +11,23 @@ git pull : To get the latest version of a repository run git pull. This pulls th
 git push : Pushes all the commits from the current local branch to its remote equivalent. 
 git log: To show the chronological commit history for a repository.
 Git fetch: Downloads all the history from remote branches.
-Undo Changes 
-Key/Command  	Description 
-git checkout -- [file]  	Replace file with contents from HEAD 
-git revert [commit] 	Create new commit that undoes changes made in 
-[commit], then apply it to the current branch 
-git reset [file]  	Remove [file] from staging area 
+**Undo Changes** 
+Key/Command  	       : Description 
+git checkout -- [file] : Replace file with contents from HEAD 
+git revert [commit]    : Create new commit that undoes changes made in [commit], then apply it to the current branch 
+git reset [file]       : Remove [file] from staging area 
 
-Branches 
+**Branches**
 Key/Command  	Description 
-git branch [branch]  	Create a new branch 
+git branch [branch]  	        Create a new branch 
 git checkout [branch]  	Switch to that branch 
 git checkout [branch] -b  	Create and checkout new branch 
-git merge [branch]  	Merge [branch] into current branch 
+git merge [branch]  	        Merge [branch] into current branch 
 git branch -d [branch]  	Deletes the [branch] 
 git push origin [branch]  	Push [branch] to remote 
-git branch  	Lists local branches 
-git branch -r  	Lists remote branches 
-git branch -a  	Lists local and remote branches 
-git merge  	Merges remote branch into current local branch 
-git log --oneline  	Lists compressed version history for the current branch
+git branch  	                Lists local branches 
+git branch -r  	        Lists remote branches 
+git branch -a  	        Lists local and remote branches 
+git merge  	                Merges remote branch into current local branch 
+git log --oneline  	        Lists compressed version history for the current branch
 
