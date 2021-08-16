@@ -1,4 +1,4 @@
-**Configuration**:
+**Configuration**
 git config --global user.name [name] – Set author name
 git config --global user.email [email] – Set author e-mail address used for GitHub.
  **Most used basic commands:**
