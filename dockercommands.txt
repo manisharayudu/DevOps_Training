@@ -1,0 +1,84 @@
+**Basic Docker Commands**  
+
+docker pull image - Downloads an image from Docker Hub 
+
+docker login - Authen­ticate to Docker Hub (or other Docker registry) 
+
+docker push <image> - Uploads an image to Docker Hub. You must be authen­ticated to run this command 
+
+docker info - Retrieves docker config­​ur­ation 
+
+docker version - Retrieves docker versioning 
+
+docker [command] --help - Command help 
+
+
+**Image and Commands**
+
+docker images - Lists all images on the local machine 
+
+docker pull <image> - Download image from local if available or pulls from docker hub 
+
+docker rmi <im­age> - Remove/Delete image
+
+docker history <i­mag­e> - Lists the history of an image
+
+docker image tag nginx btraversy/nginx - Retag existing image
+
+docker inspect <image> - Inspect image
+
+
+**Container Commands**
+
+docker ps - List all running containers 
+
+docker ps -a - List all container instances, with their ID and status 
+
+docker logs <co­nta­ine­r> - Displays the logs from a running container 
+
+docker port <co­nta­ine­r> - Displays the exposed port of a running container 
+
+docker diff <co­nta­ine­r> - Lists the changes made to a container 
+
+docker logs [-f] <co­nta­ine­r> - Read container stdout 
+
+docker top <co­nta­ine­r> - Show running processes 
+
+docker inspect <co­nta­ine­r> - Show container config­­ur­ation 
+
+docker events - Show container events 
+
+
+** Work With Images and Containers**
+
+
+docker run -it user/­image - Runs an image, creating a container and changing the terminal to the terminal within the container 
+
+docker run -p <host port­>:<­container port> -d image - Run an image in detached mode with port forwarding 
+
+docker start <co­nta­ine­r> - Start a container 
+
+docker exec <co­nta­ine­r> /bin/bash - Executes a command within a running container 
+
+docker attach <co­nta­ine­r> - Changes the command prompt from the host to a running container 
+
+docker stop <co­nta­ine­r> - Stop a container 
+
+docker rm -f <co­nta­ine­r> - Delete a container 
+
+docker create <im­age­>:<­tag> - Create image 
+
+docker rmi <image ID> - Delete an image 
+
+docker tag <i­mag­e>:­<ta­g>  <i­mag­e>:­<new tag> - Add a new tag to an image
+
+
+
+
+
+
+
+ 
+
+ 
+
