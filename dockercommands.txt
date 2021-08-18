@@ -72,6 +72,10 @@ docker rmi <image ID> - Delete an image
 
 docker tag <i­mag­e>:­<ta­g>  <i­mag­e>:­<new tag> - Add a new tag to an image
 
+**USEFUL COMMAND**
+
+sudo chmod 777 /var/run/docker.sock  ( to change permission)
+
 
 
 
