@@ -8,7 +8,8 @@ In simple terms, Docker is a platform/tool that allows to “build, ship, and ru
 
 **CONTAINERS**
 
-Containerization is a technology that’s been around for a long time, but it’s seen new life with Docker. It packages applications as images that contain everything needed to run them: code, runtime environment, libraries, and configuration. Images run in containers, which are discrete processes that take up only as many resources as any other executable.
+A container is a standard unit of software that packages up code and all its dependencies so the application runs quickly and reliably from one computing environment to another. A Docker container image is a lightweight, standalone, executable package of software that includes everything needed to run an application: code, runtime, system tools, system libraries and settings.
+Container images become containers at runtime and in the case of Docker containers - images become containers when they run on Docker Engine.
 
 *MICROSERVICES WITH DOCKER*
 
