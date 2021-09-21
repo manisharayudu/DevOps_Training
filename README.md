@@ -1,31 +1,39 @@
-**GIT & GITHUB**
+DOCKER
 
-Git is a free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency.
+Docker is a set of platform as a service (PaaS) products that use OS-level virtualization to deliver software in packages called containers. Containers are isolated from one another and bundle their own software, libraries and configuration files; they can communicate with each other through well-defined channels. Because all of the containers share the services of a single operating system kernel, they use fewer resources than virtual machines.
 
-The Git feature that really makes it stand apart from nearly every other SCM out there is its branching model.
+The service has both free and premium tiers. The software that hosts the containers is called Docker Engine.
 
-Git allows and encourages you to have multiple local branches that can be entirely independent of each other. The creation, merging, and deletion of those lines of development takes seconds.
+In simple terms, Docker is a platform/tool that allows to “build, ship, and run any app, anywhere.” Docker applications run in containers that can be used on any system: a developer’s laptop, systems on premises, or in the cloud.
 
-It has a huge speed advantage on centralized systems that constantly have to communicate with a server somewhere.
+CONTAINERS
 
-Unlike the other systems, Git has something called the "staging area" or "index". This is an intermediate area where commits can be formatted and reviewed before completing the commit.
+A container is a standard unit of software that packages up code and all its dependencies so the application runs quickly and reliably from one computing environment to another. A Docker container image is a lightweight, standalone, executable package of software that includes everything needed to run an application: code, runtime, system tools, system libraries and settings.
 
-*GitHub* is a web based service for version control for software development project. It was named after the version management system Git.
+Container images become containers at runtime and in the case of Docker containers - images become containers when they run on Docker Engine.
 
-In simple words Git is a CLI(Command Line Interface) tool to communicate with Github from local system/machine.
+Containers are an abstraction at the app layer that packages code and dependencies together. Multiple containers can run on the same machine and share the OS kernel with other containers, each running as isolated processes in user space. Containers take up less space than VMs (container images are typically tens of MBs in size), can handle more applications and require fewer VMs and Operating systems.
 
-**VERSION CONTROL SYSTEM**
+MICROSERVICES WITH DOCKER
 
-Version control is a system that keeps track of changes to a file or set of files over time so that you can recall specific versions later when ever required.
+Docker is the world's leading software containerization platform. It encapsulates your microservice into what we call as  Docker container which can then be independently maintained and deployed. Each of these containers will be responsible for one specific business functionality.
 
-There are two types of VCS:
+Docker Components
 
-• Centralized Version Control Systems 
+Docker Client : Docker client is a CLI of Docker tool which is used to communicate with the Docker Daemon.
 
-• Distributed Version Control Systems
+Daemon : Docker Daemon is a service installed in Docker Host. It runs and manages the Docker containers and other resources it acts based on commands from Docker Client.
 
-Git uses Distributed Version Control Systems with an unusually rich command set that provides both high-level operations and full access to internals.
+Docker registries : It is a repository which stores images. User can interact with Registry with push pull commands with mediation of Daemon.
 
-*Distributed VCS*: These system have a single server which acts as a central storage and all the developers will have a copy in local with all the versioned files. Thereby developer can work without relying on server during the code development.
+Images : A Docker Image is a file, comprised of multiple layers, that is used to execute code in a Docker container.
 
-**GIT Reference**: https://git-scm.com/doc
+Containers : It is a environment, it consists of libraries and other dependencies required for application and used to ship application and dependencies as one package. In other words, Docker Container is the run time instance of images.
+
+Docker Engine : Docker Engine is a containerizing technology that builds and runs containers using Docker components and services.
+
+DOCKER INSTALLATION AND REFERENCE
+
+Reference : https://docs.docker.com/
+
+Installation : https://docs.docker.com/get-docker/ (You will have an option to download in different OS).
