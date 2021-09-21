@@ -36,7 +36,7 @@ AWS > Storage > S3 > Create a bucket with the region
 
 **Create a AWS Access Key and Secret Key and user must have W/R access to the S3 bucket**
 
-AWS > Security, Identity & Complaince > IAM > USERS > Add user > Add permissions > Select AdminstratorAccessjust in this now(not advisable to give in all cases) > create access key > Save Access key ID, Secret access key To configure AWS > In the Powershell > aws configure > give the access key ID, Secret access key, Default region > Default Output format (Json)
+AWS > Security, Identity & Complaince > IAM > USERS > Add user > Add permissions > Select AdminstratorAccessjust in this now(not advisable to give in all cases) > create access key > Save Access key ID, Secret access key To configure AWS > In the Powershell/linux terminal > aws configure > give the access key ID, Secret access key, Default region > Default Output format (Json)
 
 **Create a ssh key pair by rinning ssh-keygen in root home folder**
 
