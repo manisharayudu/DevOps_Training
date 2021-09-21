@@ -17,11 +17,17 @@
 **Deploy a EC2 Linux server on AWS and download tools KOPS & KUBECTL**
 
 •	Before Deploying a EC2 Linux amd Server, check VPC, Subnets.
+
 •	Connect to EC2 server with the ssh and go to root with the command sudo su -
+
 •	To install KUBECTL follow the steps from the [Kubernetes.io]{https://kubernetes.io/docs/tasks/tools/install-kubectl-windows/}
+
 •	To give permission chmod 700 kubectl
+
 •	To install KOPS -Go to KOPS download Github > Releases > Kops-linux-amd64 >right click copy link location -In Powershell wget copy link location, ll to check
+
 •	To give permission chmod 700 kubectl
+
 •	echo $PATH > pwd > cd /etc/ > cd ~ > mv kubectl /usr/local/sbin/ > mv kops-linux-amd64 /usr/local/sbin/
 
 **Create a S3 Bucket. The K8S config will be saved in this S3 Bucket**
