@@ -1,39 +1,63 @@
-DOCKER
+***Jenkins installation***
 
-Docker is a set of platform as a service (PaaS) products that use OS-level virtualization to deliver software in packages called containers. Containers are isolated from one another and bundle their own software, libraries and configuration files; they can communicate with each other through well-defined channels. Because all of the containers share the services of a single operating system kernel, they use fewer resources than virtual machines.
+**Steps to install jenkins**
 
-The service has both free and premium tiers. The software that hosts the containers is called Docker Engine.
+**Case:1**
 
-In simple terms, Docker is a platform/tool that allows to “build, ship, and run any app, anywhere.” Docker applications run in containers that can be used on any system: a developer’s laptop, systems on premises, or in the cloud.
+1. Open ubuntu terminal
 
-CONTAINERS
+2. Check whether docker is installed or not. If not, install docker. Reference: https://docs.docker.com/get-docker/
 
-A container is a standard unit of software that packages up code and all its dependencies so the application runs quickly and reliably from one computing environment to another. A Docker container image is a lightweight, standalone, executable package of software that includes everything needed to run an application: code, runtime, system tools, system libraries and settings.
+3. After installation check the version using docker --version
 
-Container images become containers at runtime and in the case of Docker containers - images become containers when they run on Docker Engine.
+4. Now we have to pull the jenkins from the docker hub using following command: docker pull jenkins
 
-Containers are an abstraction at the app layer that packages code and dependencies together. Multiple containers can run on the same machine and share the OS kernel with other containers, each running as isolated processes in user space. Containers take up less space than VMs (container images are typically tens of MBs in size), can handle more applications and require fewer VMs and Operating systems.
+5. Once image pulled, check by using docker images
 
-MICROSERVICES WITH DOCKER
+6. Once image is created, we have to run the container using docker run -d --name container_name -p 8080:8080 -p 50000:50000 -v/var/jenkins_home jenkins
 
-Docker is the world's leading software containerization platform. It encapsulates your microservice into what we call as  Docker container which can then be independently maintained and deployed. Each of these containers will be responsible for one specific business functionality.
+7. After running the container we get the password. If we did not get type docker logs <container_id>
 
-Docker Components
+8. Then go the browser and enter http://localhost:8080
 
-Docker Client : Docker client is a CLI of Docker tool which is used to communicate with the Docker Daemon.
+9. To unlock jenkins use the step 7 process
 
-Daemon : Docker Daemon is a service installed in Docker Host. It runs and manages the Docker containers and other resources it acts based on commands from Docker Client.
+10. After unlocking install all dependencies. Finally jenkins is running in the localhost
 
-Docker registries : It is a repository which stores images. User can interact with Registry with push pull commands with mediation of Daemon.
+Theme: In this project I have learned how to install docker. Up on that I have learned how to pull the images from the docker hub and run as container.
 
-Images : A Docker Image is a file, comprised of multiple layers, that is used to execute code in a Docker container.
+**Update jenkins**
 
-Containers : It is a environment, it consists of libraries and other dependencies required for application and used to ship application and dependencies as one package. In other words, Docker Container is the run time instance of images.
+1.Login into the jenkins container in the localhost:8080 then using the following path jenkins>manage jenkins>at the right bottom we can see the jenkins new version then right click and copy the link
 
-Docker Engine : Docker Engine is a containerizing technology that builds and runs containers using Docker components and services.
+2.Go to the terminal on to root user and use the below command: docker container exec -u 0 -it (container name) bash
 
-DOCKER INSTALLATION AND REFERENCE
+3.Now we have to get the new version, so use the command line: wget {copy the link address here (see the step 1)}
 
-Reference : https://docs.docker.com/
+4.Move it to the correct place by using: mv ./jenkins.war /usr/share/jenkins
 
-Installation : https://docs.docker.com/get-docker/ (You will have an option to download in different OS).
+5.Change the permissions using: chown jenkins:jenkins /usr/share/jenkins/jenkins.war
+
+6.Once the process is done, exit the container using exit command
+
+7.Restart the container from localhost using: docker container restart <containername>
+
+8.Now we can see the updated jenkins
+
+Work: In this project I have learned how to update jenkins locally.
+
+**Case:2**
+
+Using jenkins_JCAC (jenkins configuration as a code)
+
+In this project I have spinup jenkins using Dockerfile with corresponding plugins and Yaml file.
+
+By using below commands I have built the jenkins
+
+$ docker build -t imagename . (eg: image name=my jenkins)
+
+sudo chmod 777 /var/run/docker.sock - Docker Daemon Permission
+
+$ docker run -d --name myjenkins -p 8080:8080 -v /var/run/docker.sock:/var/run/docker.sock -v /usr/bin/docker:/usr/bin/docker jenkins
+
+docker ps or ps -a (to check the container is running or not)
