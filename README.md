@@ -1,31 +1,45 @@
-**GIT & GITHUB**
+***Create K8S cluster on AWS using KOPS***
 
-Git is a free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency.
+**We need a domain name which can be bought from Godaddy**
 
-The Git feature that really makes it stand apart from nearly every other SCM out there is its branching model.
+•	Domains > search > pick a domain > checkout
 
-Git allows and encourages you to have multiple local branches that can be entirely independent of each other. The creation, merging, and deletion of those lines of development takes seconds.
+**We need to create a Route53 zone with the same domain name we bought**
 
-It has a huge speed advantage on centralized systems that constantly have to communicate with a server somewhere.
+•	AWS > Networking & Content Delivery > Select Route53
+•	Hosted zones > create Hosted zone > Copy the domain name from Godaddy and select Public Hosted Zone and create it
+•	You can see NS for the created hosted zone
 
-Unlike the other systems, Git has something called the "staging area" or "index". This is an intermediate area where commits can be formatted and reviewed before completing the commit.
+**Configure godaddy domain to use the Route53 Name servers**
 
-*GitHub* is a web based service for version control for software development project. It was named after the version management system Git.
+•	Godaddy > My Domains > DNS Settings > Add all the Nameservers created in the Route53 to Godaddy
 
-In simple words Git is a CLI(Command Line Interface) tool to communicate with Github from local system/machine.
+**Deploy a EC2 Linux server on AWS and download tools KOPS & KUBECTL**
 
-**VERSION CONTROL SYSTEM**
+•	Before Deploying a EC2 Linux amd Server, check VPC, Subnets.
+•	Connect to EC2 server with the ssh and go to root with the command sudo su -
+•	To install KUBECTL follow the steps from the [Kubernetes.io]{https://kubernetes.io/docs/tasks/tools/install-kubectl-windows/}
+•	To give permission chmod 700 kubectl
+•	To install KOPS -Go to KOPS download Github > Releases > Kops-linux-amd64 >right click copy link location -In Powershell wget copy link location, ll to check
+•	To give permission chmod 700 kubectl
+•	echo $PATH > pwd > cd /etc/ > cd ~ > mv kubectl /usr/local/sbin/ > mv kops-linux-amd64 /usr/local/sbin/
 
-Version control is a system that keeps track of changes to a file or set of files over time so that you can recall specific versions later when ever required.
+**Create a S3 Bucket. The K8S config will be saved in this S3 Bucket**
 
-There are two types of VCS:
+AWS > Storage > S3 > Create a bucket with the region
 
-• Centralized Version Control Systems 
+**Create a AWS Access Key and Secret Key and user must have W/R access to the S3 bucket**
 
-• Distributed Version Control Systems
+AWS > Security, Identity & Complaince > IAM > USERS > Add user > Add permissions > Select AdminstratorAccessjust in this now(not advisable to give in all cases) > create access key > Save Access key ID, Secret access key To configure AWS > In the Powershell > aws configure > give the access key ID, Secret access key, Default region > Default Output format (Json)
 
-Git uses Distributed Version Control Systems with an unusually rich command set that provides both high-level operations and full access to internals.
+**Create a ssh key pair by rinning ssh-keygen in root home folder**
 
-*Distributed VCS*: These system have a single server which acts as a central storage and all the developers will have a copy in local with all the versioned files. Thereby developer can work without relying on server during the code development.
+*To create Kops cluster*
 
-**GIT Reference**: https://git-scm.com/doc
+•	To create config
+kops create cluster --name=${domain-name} --state=s3://${S3-bucket-name} --zones=${xx-xxxx-xx} --node-count=2 --node-size=t3.medium --master-size=t3.medium --dns-zone=${domain-name}
+
+•	To update
+kops update cluster ${domain-name} --yes --state=s3://${S3-bucket-name}
+
+•	Refresh the EC2- missions will start, Route53 - records will create
