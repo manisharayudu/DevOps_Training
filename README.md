@@ -20,7 +20,7 @@
 
 •	Connect to EC2 server with the ssh and go to root with the command sudo su -
 
-•	To install KUBECTL follow the steps from the [Kubernetes.io]{https://kubernetes.io/docs/tasks/tools/install-kubectl-windows/}
+•	To install KUBECTL follow the steps from the [Kubernetes.io]{https://kubernetes.io/de/docs/tasks/tools/install-kubectl/}
 
 •	To give permission chmod 700 kubectl
 
