@@ -49,3 +49,5 @@ Host (under Advanced Options): postgres
 8. To stop our Drupal application: *docker-compose down*
 
 **OUTPUT**
+
+![Drupal-postgre](https://user-images.githubusercontent.com/83665305/137921206-6aea2f57-0b92-4010-b965-04af0223b6f4.PNG)
