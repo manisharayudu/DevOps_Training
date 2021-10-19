@@ -50,4 +50,10 @@ Host (under Advanced Options): postgres
 
 **OUTPUT**
 
+***DRUPAL-POSTGRES***
+
 ![Drupal-postgre](https://user-images.githubusercontent.com/83665305/137921206-6aea2f57-0b92-4010-b965-04af0223b6f4.PNG)
+
+***WORDPRESS-MYSQL***
+
+![Wordpress-Mysql](https://user-images.githubusercontent.com/83665305/137924224-b986fc36-3055-423e-a777-886d41542567.PNG)
